@@ -1,0 +1,105 @@
+.hotel {
+    &__img {
+        z-index: 1;
+    }
+    &__arrow {
+        @include size (87px, 100%);
+        background: rgba(36, 21, 11, 0.8);
+        z-index: 2;
+        transition: all .3s ease-in-out;
+        @media (min-width: 320px) and (max-width: 768px){
+               display: none;
+           }
+        
+        
+        &::after, &::before {
+            @include size (175px, 2px);
+            content: "";
+            background: rgba(255, 255, 255, 0.6);
+            z-index: 3
+        }
+        &--prev {
+             @media (min-width: 320px) and (max-width: 768px){
+               display: none;
+           }
+            @include pos ($l:0);
+            &::after {
+                  transform: rotate(-107deg);
+                 @include pos ($r:-42px, $b: 35.3%);
+            }
+            &::before {
+                 transform: rotate(107deg);
+                @include pos ($r:-42px, $t: 37%);
+            }
+        }
+        &--next {
+             @media (min-width: 320px) and (max-width: 768px){
+               display: none;
+           }
+            @include pos ($r:0, $b:0); 
+            &::after {
+                 transform: rotate(-107deg);
+                 @include pos ($r:-42px, $t: 37%);
+            }
+            &::before {
+                transform: rotate(107deg);
+                @include pos ($r:-42px, $b: 35.3%);
+            }
+        }
+    }
+    &__slider {
+    position: relative;
+        margin-bottom: 26px;
+        @media (min-width: 481px) and (max-width: 768px){
+            margin-bottom: 15px;
+           }
+           @media (min-width: 320px) and (max-width: 480px){
+            margin-bottom: 10px;
+           }
+    &:hover 
+       .hotel__arrow {
+           background: rgba(36, 21, 11, 0.3);
+           &::after, &::before {
+               background: rgba(255, 255, 255, 0.3);
+           }
+       }
+     &::after {
+           @include size(25%, 35%);
+            @include pos($l:37.5%, $b:-15%);
+            content: '';
+            background: $black;
+            border-radius: 100%;
+            z-index: -2;
+            @media (min-width: 320px) and (max-width: 768px){
+            @include size(30%, 48%);
+            @include pos($l:35%, $b:-15%);
+            
+           }
+         
+        }
+    }
+    
+    &__btn {
+        color: $white;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        margin-bottom: 121px;
+        @media (min-width: 769px) and (max-width: 1200px){
+            margin-bottom: 60px;
+           }
+         @media (min-width: 481px) and (max-width: 768px){
+            margin-bottom: 45px;
+           }
+         @media (min-width: 320px) and (max-width: 480px){
+            margin-bottom: 35px;
+            font-size: .8rem; 
+           }
+    }
+    .slick-arrow {
+    @media (min-width: 320px) and (max-width: 768px){
+        display: none !important;
+           }
+     }
+}

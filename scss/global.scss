@@ -1,0 +1,22 @@
+// Base
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/_reset";
+
+// Layout
+@import "layout/_general";
+
+
+// Page styles
+@import "modules/_header";
+@import "modules/_nav";
+@import "modules/_inrestorant";
+@import "modules/_hotel";
+@import "modules/_cuisine";
+@import "modules/_footer";
+
+@import "modules/cuisine/_menu";
+@import "modules/cuisine/_inst";
+
+
+@import "layout/_media";

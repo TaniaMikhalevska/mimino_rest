@@ -1,0 +1,56 @@
+.inrestorant {
+    & .section__title {
+        margin: 63px 0 43px;  
+        @media (min-width: 769px) and (max-width: 1200px){
+         margin: 20px 0 20px; 
+        }
+        @media (min-width: 320px) and (max-width: 768px){
+         margin: 5px 0 8px; 
+        }
+    }
+    & .section__description {
+        text-align: center;
+        font-size: 1.125rem;
+        line-height: 1.32rem;
+        margin: 0 auto 100px;
+        @media (min-width: 1201px) {
+            width: 67%;    
+        }
+        @media (min-width: 769px) and (max-width: 1200px){
+         margin-bottom: 40px; 
+        font-size: 1.325rem;
+        line-height: 1.42rem;
+        }
+        @media (min-width: 320px) and (max-width: 768px){
+         margin-bottom: 25px; 
+        font-size: 1.325rem;
+        line-height: 1.42rem;
+        }
+        
+    }
+    &__btn {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        text-transform: uppercase;
+        color: $white;
+        width: 26%;
+        border-radius: 30px;
+        padding: 32px 0;
+        background: $black;
+        border: 1px solid $black;
+        transition: all .3s ease-in-out;
+        margin-bottom: 34px;
+        @media (min-width: 320px) and (max-width: 768px) {
+            width: 50%;
+            padding: 20px 0;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        &:hover {
+            background: $white;
+            border-color: #D2CBCB;
+            color: $black;
+        }
+    }
+}
