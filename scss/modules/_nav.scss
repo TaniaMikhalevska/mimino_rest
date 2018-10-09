@@ -1,72 +1,134 @@
 .nav {
+    margin-top: -1px;
     background: $black;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         height: 50px;
         position: fixed;
-        z-index: 15;
+        z-index: 20;
+}
+    .container-fluid {
+        max-width: 1200px;
+         background: $black;
+        }
 
-    }
+    &-col {
+        @media (max-width: 767px) {
+            padding: 0;
+            height: 50px;
+            }
+        }
     &__wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    }
+        transition: all 0.4s ease; 
+        @media (max-width: 767px) {
+            flex-direction: column;
+            transform: translateY(-140%);
+            }
+            &--active {
+                transform: translateY(0);
+                }
+            }
+
     &__items {
         display: flex;
         flex-direction: row;
-        @media (max-width: 768px) {
-                display: none;
+        @media (max-width: 767px) {
+        flex-direction: column;
+        background: rgba(0,0,0, .8);
+        align-items: center;    
             }
-        &--left {
+            &--left {
             .nav__link {
-                padding-right: 46px;
-                padding-left: 10px;
-                @media (min-width: 769px) and (max-width: 1200px) {
-                    padding-right: 27px;
-                    padding-left: 10px;
-                }
-            }
-        }
-        &--right {
-            .nav__link {
-                padding-left: 56px;
                 padding-right: 10px;
-                @media (min-width: 769px) and (max-width: 1200px) {
+                padding-left: 10px;
+                @media (min-width: 1200px) {
+                    margin-right: 36px;
+                }
+                @media (min-width: 840px) and (max-width: 1200px) {
                     padding-right: 10px;
-                    padding-left: 35px;
+                    padding-left: 10px;
+                    margin-right: 17px;
+                    }
+                @media (min-width: 768px) and (max-width: 839px) {
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    }
+                @media (max-width: 767px) {
+                    padding: 15px;
+                    
+                    }
+                }
+            }
+            &--right {
+                .nav__link {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    @media (min-width: 1200px) {
+                    margin-left: 46px;
+                }
+                    @media (min-width: 840px) and (max-width: 1200px) {
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        margin-left: 25px;
+                        }
+                    @media (min-width: 768px) and (max-width: 839px) {
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        margin-left: 5px;
+                        }
+                    @media (max-width: 767px) {
+                        padding: 15px;
+                        }
+                }
+                @media (max-width: 767px) {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                }
+            }
+            &--center {
+                text-align: center;
+                .nav__link {
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    &::before, &::after {
+                        top: 82%;
+                    }
+                    p {
+                        @media (min-width: 768px) and (max-width: 839px) {
+                            line-height: 1.2;
+                            }
+                       
+                        }
+                    }
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+           
+            &--min {
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                width: 100%;
+                background: $black;
+                 &::after {
+                        @include size(20px, 3px);
+                        position: absolute;
+                        background: pink;
+                        z-index: 100;
+                    }
+                @media (min-width: 768px) {
+                    display: none;
                 }
             }
         }
-        &--center {
-            text-align: center;
-            .nav__link {
-                padding-right: 10px;
-                padding-left: 10px;
-            }
-        }
-        &--min {
-            display: flex;
-            flex-direction: row;
-            justify-content:space-between;
-            align-items: center;
-            width: 100%;
-            @media (min-width: 769px) {
-                display: none;
-                
-            }
-        }
- }
     &__logo-min {
         width: 80px;
-    }
-    &__menu-min {
-         @media (min-width: 769px) {
-                display: none;
-            }
-        color: $white;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-
+        height: 50px;
+        margin-left: 5px;
+        z-index: 22;
     }
 
     &__link {
@@ -74,44 +136,86 @@
         padding: 35px 0 20px;
         color: $white;
         text-transform: uppercase;
-        font-size: 1rem;
         line-height: 1.375rem;
-        @media (min-width: 769px) and (max-width: 1200px) {
+        transition: all .5s ease;
+        position: relative;
+                &::before, &::after {
+                    content: "";
+                    @include size(0,1px);
+                    background: $white;
+                    transition: all .5s ease;
+                    @include pos($t:65%, $l:50%);
+                }
+                &:hover::before {
+                    width: 50%;
+                    left: 0;
+                }
+                &:hover::after {
+                    width: 50%;
+                    right: 0;
+                }
+        @media (min-width: 768px) and (max-width: 1200px) {
             text-transform: none;
             }
-        &--min {
-            display: block;
-            color: $white;
-            text-align: right;
-            font-size: .9rem;
+        @media (min-width: 768px) and (max-width: 950px) {
+            font-size: .83rem;
+            padding: 16px 0 16px;
+            align-self: center;
+            }
+        @media (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+        &:active {
+            text-decoration: underline;
             }
         }
+    
+            &--min {
+                color: $white;
+                font-size: 1.2rem;
+                padding: 15px;
+                
+        }
     }
+    &__btn--min {
+        text-align: right;
+        line-height: 50px;
+        z-index: 22;
+        width: 100%;
+        background: $black;
+         
+    }
+}
+
 .round__wrap {
+   margin-top: -2px;
     z-index: 4;
     display: flex;
     overflow: hidden;
     height: 100%;
-    @media (max-width: 768px) {
-        height: 100px;
-        position: relative;
-        overflow: hidden;
+    padding-bottom: 2px;
+    box-sizing: content-box;
+    @media (max-width: 767px) {
+        display: none;
+        }
     }
-}
 .round {
     @include size(30%, 300px); 
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin: -250px auto 0;
+    margin: -252px auto 0;
     background: $black;
     border-radius: 100%;
-    @media (max-width: 768px) {
-         @include size(40%, 100px); 
-         margin: 0;
-         top: -12px;
-         left: 29%;
-         position: fixed;
-        z-index: 14;
+    @media (min-width: 768px) and (max-width: 991px) {
+        @include size(40%, 300px); 
+        }
+    @media (max-width: 767px) {
+        display: none;
     }
+   
 }
+/*#map {
+    width: 800px;
+    height: 800px;
+}*/

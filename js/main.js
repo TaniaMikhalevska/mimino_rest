@@ -2,16 +2,16 @@
 
 (function($){
 	$(document).ready(function() {
-		/* slick
-        $('.header__slider').slick({
-        infinite: true,
-        arrows: false,
-        speed: 4000,
-        fade: true,
-        cssEase: 'linear',
-        //autoplay: true
-  });*/
-
+        
+        
+           $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+		
         $('.hotel__slider').slick({
             infinite: true,
             prevArrow: '<div class="hotel__arrow--prev hotel__arrow"></div>',
@@ -29,13 +29,24 @@
         })
     $btnTop.on("click", function() {
         $("html, body").animate({scrollTop:0}, 900)
-    });    
+    }); 
+        
+        
+          $('.nav__link--min').click(function(){
+            $('.nav__wrapper').toggleClass('nav__wrapper--active')
+        });
+       
+        
+        
+        
+ 
+        
+    })
 
-        
-	});
-    
-    
-    
 })(jQuery);
-  
-        
+
+
+
+
+
+    

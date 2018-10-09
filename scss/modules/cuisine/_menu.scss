@@ -1,64 +1,164 @@
+
 .menu {
-    &__title {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin: 35px 0 55px;
-    }
-    &__name {
-       padding: 0 20px; 
-       font-size: 48px;
-       text-transform: uppercase;
-    }
-    &__decor {
-        align-self: flex-end;
-        padding-bottom: 5px;
-    }
+    background: $black;
+    @media (min-width: 320px) and (max-width: 768px){
+         
+           }
     .container-fluid {
         background: $black;
-        font-size: 18px;
-        line-height: 21px;
         z-index: -1;
+        max-width: 1370px;
+        padding: 0;
+    }
+    &-row {
+        @media (min-width: 481px) and (max-width: 767px){
+            background: $white;
+            padding: 0 5%;
+           }
+    }
+    &-col {
+        background: $black;
     }
     &__kind {
         width: 268px;
-        padding: 18px 0 18px 100px;
+        padding: 18px 0 18px 14%;
         border-radius: 0 30px 30px 0;
         background: $white;
         text-transform: uppercase;
-        margin-bottom: 75px;
-        /*&:not(.menu__kind:first-child) {
-            margin-top: 75px;
-        }*/
+        font-size: 1.125rem;
+        margin-bottom: 70px;
+        @media (min-width: 768px) and (max-width: 1200px){
+               margin-bottom: 30px;
+           }
+        @media (min-width: 320px) and (max-width: 767px){
+            padding: 8px 0 8px 7%;
+            min-width: 160px;
+            width: 25%;
+            margin-bottom: 25px;
+            font-weight: 700;
+            
+           }
     }
+
     &__item {
-        display: flex;
-        flex-direction: row;
+        font-size: 1.125rem;
+        line-height:  1.413rem;
+        margin-bottom: 20px;
         color: $white;
-        margin-bottom: 10px
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: 481px) and (max-width: 767px){
+             font-size: 1.5rem;
+             line-height:  1.75rem;
+           }
+        &:last-child {
+            margin-bottom: 70px;
+            @media (min-width: 768px) and (max-width: 1200px){
+               margin-bottom: 30px;
+           }
+            @media (min-width: 320px) and (max-width: 767px){
+               margin-bottom: 20px;
+           }
+        }
     }
     &__dish {
-        padding: 0 20px 18px 30px;
-    }
-    &__price {
-        width: 17%;
-        text-align: right;
-        margin-right: 40px;
-    }
+        margin-left: 14%;
+        width: 68%;
+        overflow-x: hidden;
+        @media (min-width: 768px) and (max-width: 1200px){
+               margin-left: 5%;
+               width: 75%;
+           }
+        @media (min-width: 481px) and (max-width: 767px){
+            margin-left:9%;
+            width: 63%;
+           }
+        @media (min-width: 320px) and (max-width: 480px){
+            margin-left:15px;
+            width: 71%;
+           }
+        &::after {
+            float: left;
+            width: 0;
+            white-space: nowrap;
+            content:
+         ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            }
+}
+    &__name{
+        padding-right: 0.33em;
+        background: $black}
+    &__weight {
+        float: right;
+        padding-left: 0.33em;
+        background: $black;
+        position: relative;
+        z-index: 1}
+        &__price {
+            align-self: flex-end;
+            @media (min-width: 481px) and (max-width: 767px){
+               margin-right:9%;
+           }
+            @media (min-width: 320px) and (max-width: 480px){
+               margin-right:15px;
+           }
+        
+        }
     &__photo {
+        margin-left: 12%;
         height: 100%;
         background-size: cover;
         background-position: top center;
         background-repeat: no-repeat;
         z-index: 2;
+        @media (min-width: 768px) and (max-width: 992px){
+            height: 70%;
+            margin-right: 5%;
+            transform: translateY(25%);
+            border-radius: 30px;
+           }
+        @media (min-width: 320px) and (max-width: 767px){
+              display: none;
+              
+           }
     }
     &__next {
         display: block;
+        margin: 50px 0;
         text-decoration: underline;
         text-align: right;
-        margin: 45px 0 40px;
         color: $white;
-        margin-right: 40px;
+        @media (min-width: 768px) and (max-width: 1200px){
+              margin: 30px 0;
+              
+           }
+        @media (min-width: 481px) and (max-width: 767px){
+              margin-right: 9%;
+              
+           }
+        @media (min-width: 320px) and (max-width: 480px){
+              margin: 15px;
+        }
     }
-    
+
+}
+.title {
+     &__wrap {
+        display: flex;
+        justify-content: center;
+        margin: 35px 0 55px;
+            @media (min-width: 320px) and (max-width: 767px){
+              margin: 70px 0 20px;;
+        }
+    }
+    &__name {
+       padding: 0 20px; 
+       font-size: 3rem;
+       text-transform: uppercase;
+      
+    }
+    &__decor {
+        align-self: flex-end;
+        padding-bottom: 5px;
+    }
 }

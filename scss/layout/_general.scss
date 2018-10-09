@@ -41,10 +41,12 @@ body {
 
 html {
     font-size: 16px;
-    @media (min-width: 320px) and (max-width: 768px){
+    @media (min-width: 320px) and (max-width: 767px){
      font-size: 12px;    
     }
- 
+}
+body {
+    min-width: 320px;
 }
 
 a {
@@ -56,51 +58,29 @@ a {
     font-size: 2.25rem;
     text-transform: uppercase;
     text-align: center;
-    }
-     &__item {
-        display: flex;
-         justify-content: center;
-         @media (min-width: 1201px) {
-        &--center {
-           justify-content: center; 
-        }
-        &--right {
-            justify-content: flex-end;
-        }
-      }
-    }
-    &__img {
-       @include size(307px, 230px);
-       border-radius: 30px;
-       margin-bottom: 25px;
-        @media (min-width: 769px) and (max-width: 1200px){
-        margin-bottom: 15px;
-        }
-        @media (min-width: 320px) and (max-width: 768px){
-        margin-bottom: 8px;
-        }
-    }
-    &__item-title{
-        text-transform: uppercase;
-        color: #000;
-        text-align: center;
-        margin-bottom: 94px;
-        font-size: 1.125rem;
-         @media (min-width: 769px) and (max-width: 1200px){
-        margin-bottom: 40px;
-        }
-        @media (min-width: 320px) and (max-width: 768px){
-        margin-bottom: 20px;
+    @media (min-width: 320px) and (max-width: 480px){
+        font-size: 1.5rem;
         }
     }
 }
+     
 .btn--top{
-    @include size(80px);
+    box-sizing: content-box;
+    padding: 20px;
+    @include size(100px);
      z-index: 99;
     position: fixed;
     display: none;
-    bottom: 20px;
-    right: 40px;
+    bottom: 0;
+    right: 20px;
+    transition: all .3s ease;
+    &:hover{
+        svg {
+            fill: rgba(128,128,128,.4);
+            stroke: rgba(128,128,128,.6); 
+        }
+        transform: translateY(-5px);
+    }
    
     @media (min-width: 769px) and (max-width: 1200px){
         @include size(50px);
@@ -109,7 +89,12 @@ a {
         @media (min-width: 320px) and (max-width: 768px){
         @include size(30px);
         }
-    & svg {
-        fill: grey;
+    svg {
+        fill: rgba(128,128,128,.3);
+        stroke: rgba(128,128,128,.5);
+        stroke-width: 5;
+        
+    
     }
 }
+
