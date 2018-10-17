@@ -1,0 +1,100 @@
+.hotel-gallery {
+    margin-bottom: 30px;
+    @media (min-width: 320px) and (max-width: 768px){
+         margin-bottom: 0; 
+        }
+    
+    .section__title {
+        margin: 70px 0 43px; 
+        @media (min-width: 320px) and (max-width: 768px){
+         margin-bottom: 10px; 
+        }
+        @media (min-width: 768px) and (max-width: 992px){
+         margin-top: 30px; 
+        }
+    }
+     .section__description {
+        text-align: center;
+        font-size: 1.125rem;
+        line-height: 1.32rem;
+        margin: 0 auto 60px;
+     
+        @media (min-width: 768px) and (max-width: 1200px){
+         margin-bottom: 40px; 
+        font-size: 1.325rem;
+        line-height: 1.42rem;
+        }
+        @media (min-width: 320px) and (max-width: 768px){
+         margin-bottom: 30px; 
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        }
+        
+    }
+    &__btn {
+        font-size: 1.125rem;
+        text-transform: uppercase;
+    }
+} 
+#new {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+     margin-bottom: 94px;
+    @media (min-width: 768px) and (max-width: 1200px) {
+            margin-bottom: 40px;
+            height: 230px;
+        }
+      @media (min-width: 576px) and (max-width: 767px) {
+            margin-bottom: 30px;
+            height: 80px;
+        }
+    @media (min-width: 320px) and (max-width: 575px) {
+            margin-bottom: 0;
+        height: 50px;
+        margin-top: -30px;
+    }
+    &:hover, &:active {
+        &::after{
+              transform: rotate(50deg);
+            
+
+        }
+         &::before{
+              transform: rotate(-50deg);
+             
+
+        }
+    }
+   
+        
+        &::after, &::before {
+            @include pos($r:30px, $t:50%);
+             @include size (35%, 1px);
+            content: "";
+            background: $black;
+            transform-origin: right;
+           transition: all .5s ease; 
+             @media (min-width: 320px) and (max-width: 576px) {
+            width: 5%;
+                 right: 80px;
+        }
+             @media (min-width: 576px) and (max-width: 767px) {
+            width: 20%;
+                 right: 40px;
+        }
+    
+  
+    }
+        &::after {
+            transform: rotate(60deg);
+           
+            
+        }
+         &::before {
+            transform: rotate(-60deg);
+            
+    }
+    
+}

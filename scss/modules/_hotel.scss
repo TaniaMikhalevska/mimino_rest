@@ -17,7 +17,7 @@ width: 7.5%;
         background: rgba(36, 21, 11, 0.8);
         z-index: 2;
         transition: all .3s ease-in-out;
-        @media (min-width: 320px) and (max-width: 767px){
+        @media (min-width: 320px) and (max-width: 768px){
                display: none;
            }
         
@@ -30,41 +30,41 @@ width: 7.5%;
             
         }
         &--prev {
-             @media (min-width: 320px) and (max-width: 767px){
+             @media (min-width: 320px) and (max-width: 768px){
                display: none;
            }
             @include pos ($l:0);
             &::after {
                   transform: rotate(-107deg);
                  @include pos ($r:-42px, $b: 35.3%);
-                @media (min-width: 768px) and (max-width: 991px){
+                @media (min-width: 768px) and (max-width: 992px){
                right: -30px;
            }
             }
             &::before {
                  transform: rotate(107deg);
                 @include pos ($r:-42px, $t: 37%);
-                @media (min-width: 768px) and (max-width: 991px){
+                @media (min-width: 768px) and (max-width: 992px){
                    right: -30px;
            }
             }
         }
         &--next {
-             @media (min-width: 320px) and (max-width: 767px){
+             @media (min-width: 320px) and (max-width: 768px){
                display: none;
            }
             @include pos ($r:0, $b:0); 
             &::after {
                  transform: rotate(-107deg);
                  @include pos ($l:-42px, $t: 37%);
-                 @media (min-width: 768px) and (max-width: 991px){
+                 @media (min-width: 768px) and (max-width: 992px){
                      left: -30px;
            }
             }
             &::before {
                 transform: rotate(107deg);
                 @include pos ($l:-42px, $b: 35.3%);
-                @media (min-width: 768px) and (max-width: 991px){
+                @media (min-width: 768px) and (max-width: 992px){
                      left: -30px;
            }                
 
@@ -74,7 +74,7 @@ width: 7.5%;
     &__slider {
     position: relative;
         margin-bottom: 26px;
-        @media (min-width: 481px) and (max-width: 767px){
+        @media (min-width: 480px) and (max-width: 768px){
             margin-bottom: 15px;
            }
            @media (min-width: 320px) and (max-width: 480px){
@@ -98,7 +98,7 @@ width: 7.5%;
                 @include size(38%, 60%);
                 @include pos($l:31%, $b:-18%);
            }
-             @media (min-width: 601px) and (max-width: 767px){
+             @media (min-width: 600px) and (max-width: 768px){
                 @include size(30%, 60%);
                 @include pos($l:35%, $b:-15%);    
                }
@@ -114,10 +114,10 @@ width: 7.5%;
         text-transform: uppercase;
         font-size: 1.125rem;
         margin-bottom: 121px;
-        @media (min-width: 768px) and (max-width: 1199px){
+        @media (min-width: 768px) and (max-width: 1200px){
             margin-bottom: 60px;
            }
-         @media (min-width: 480px) and (max-width: 767px){
+         @media (min-width: 480px) and (max-width: 768px){
             margin-bottom: 45px;
            }
          @media (min-width: 320px) and (max-width: 480px){
@@ -126,7 +126,7 @@ width: 7.5%;
            }
     }
     .slick-arrow {
-    @media (min-width: 320px) and (max-width: 767px){
+    @media (min-width: 320px) and (max-width: 768px){
         display: none !important;
            }
      }

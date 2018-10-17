@@ -39,54 +39,36 @@
         background: rgba(0,0,0, .8);
         align-items: center;    
             }
-            &--left {
-            .nav__link {
-                padding-right: 10px;
-                padding-left: 10px;
-                @media (min-width: 1200px) {
-                    margin-right: 36px;
-                }
-                @media (min-width: 840px) and (max-width: 1200px) {
-                    padding-right: 10px;
-                    padding-left: 10px;
-                    margin-right: 17px;
-                    }
-                @media (min-width: 768px) and (max-width: 839px) {
-                    padding-right: 10px;
-                    padding-left: 10px;
-                    }
-                @media (max-width: 767px) {
-                    padding: 15px;
-                    
-                    }
-                }
-            }
-            &--right {
+            &--right, &--left{
                 .nav__link {
                     padding-left: 10px;
                     padding-right: 10px;
                     @media (min-width: 1200px) {
-                    margin-left: 46px;
+                    margin: 0 23px;
                 }
                     @media (min-width: 840px) and (max-width: 1200px) {
                         padding-right: 10px;
                         padding-left: 10px;
-                        margin-left: 25px;
+                        margin: 0 12px;
                         }
-                    @media (min-width: 768px) and (max-width: 839px) {
+                    @media (min-width: 768px) and (max-width: 840px) {
                         padding-right: 10px;
                         padding-left: 10px;
-                        margin-left: 5px;
+                        margin: 0 3px;
+                    
                         }
                     @media (max-width: 767px) {
                         padding: 15px;
                         }
                 }
-                @media (max-width: 767px) {
+               
+            }
+        &--right {
+             @media (max-width: 768px) {
                 border-bottom-left-radius: 15px;
                 border-bottom-right-radius: 15px;
                 }
-            }
+        }
             &--center {
                 text-align: center;
                 .nav__link {
@@ -96,7 +78,7 @@
                         top: 82%;
                     }
                     p {
-                        @media (min-width: 768px) and (max-width: 839px) {
+                        @media (min-width: 768px) and (max-width: 840px) {
                             line-height: 1.2;
                             }
                        
@@ -113,13 +95,14 @@
                 align-items: center;
                 width: 100%;
                 background: $black;
+                box-shadow: 0px 0px 15px -2px rgba(255, 255, 255, .5); 
                  &::after {
                         @include size(20px, 3px);
                         position: absolute;
                         background: pink;
                         z-index: 100;
                     }
-                @media (min-width: 768px) {
+                @media (min-width: 767px) {
                     display: none;
                 }
             }
@@ -127,7 +110,6 @@
     &__logo-min {
         width: 80px;
         height: 50px;
-        margin-left: 5px;
         z-index: 22;
     }
 
@@ -154,10 +136,10 @@
                     width: 50%;
                     right: 0;
                 }
-        @media (min-width: 768px) and (max-width: 1200px) {
+        @media (min-width: 767px) and (max-width: 1200px) {
             text-transform: none;
             }
-        @media (min-width: 768px) and (max-width: 950px) {
+        @media (min-width: 767px) and (max-width: 950px) {
             font-size: .83rem;
             padding: 16px 0 16px;
             align-self: center;
@@ -173,7 +155,7 @@
             &--min {
                 color: $white;
                 font-size: 1.2rem;
-                padding: 15px;
+                padding: 5px 15px;
                 
         }
     }
@@ -207,11 +189,24 @@
     margin: -252px auto 0;
     background: $black;
     border-radius: 100%;
-    @media (min-width: 768px) and (max-width: 991px) {
+    @media (min-width: 767px) and (max-width: 992px) {
         @include size(40%, 300px); 
         }
     @media (max-width: 767px) {
         display: none;
+    }
+
+    &__img {
+        transform: scale(.6);
+        position: relative;
+        bottom: -10px;
+        right: 0;
+        &--main {
+             @media (min-width: 769px) {
+        display: none;
+    } 
+        }
+        
     }
    
 }

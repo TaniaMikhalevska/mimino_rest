@@ -1,25 +1,19 @@
 .inrestorant {
-    .container-fluid {
-        max-width: 1200px;
-        @media (min-width: 992px) and (max-width: 1199px) {
-            max-width: 960px;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            max-width: 7 0px;
-        }
-    }
-    & .section__title {
-        margin: 63px 0 43px; 
-        @media (min-width: 320px) and (max-width: 767px){
+     .section__title {
+        margin: 70px 0 43px; 
+        @media (min-width: 320px) and (max-width: 768px){
          margin-bottom: 10px; 
         }
+          @media (min-width: 768px) and (max-width: 992px){
+         margin-top: 30px; 
+        }
     }
-    & .section__description {
+     .section__description {
         text-align: center;
         font-size: 1.125rem;
         line-height: 1.32rem;
         margin: 0 auto 100px;
-        @media (min-width: 1201px) {
+        @media (min-width: 1200px) {
             width: 67%;    
         }
         @media (min-width: 768px) and (max-width: 1200px){
@@ -27,7 +21,7 @@
         font-size: 1.325rem;
         line-height: 1.42rem;
         }
-        @media (min-width: 320px) and (max-width: 767px){
+        @media (min-width: 320px) and (max-width: 768px){
          margin-bottom: 30px; 
         font-size: 1.2rem;
         line-height: 1.3rem;

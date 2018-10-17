@@ -1,3 +1,11 @@
+
+    .container-fluid {
+        max-width: 1200px;
+        @media (min-width: 992px) and (max-width: 1200px) {
+            max-width: 960px;
+        }
+      
+    }
 .section {
     &__link {
         &:hover {
@@ -7,7 +15,7 @@
         }
                 
                 .section__img {
-                    filter: brightness(135%);
+                    filter: brightness(115%);
                 }
             
             }
@@ -33,7 +41,7 @@
             @media (min-width: 768px) and (max-width: 1200px) {
                 margin-bottom: 15px;
         }
-            @media (min-width: 320px) and (max-width: 767x) {
+            @media (min-width: 320px) and (max-width: 768x) {
                 margin-bottom: 8px;
         }
         
@@ -67,34 +75,35 @@
         }
         @media (min-width: 320px) and (max-width: 350px) {
             height: 180px;
-        }/*
-        @media (min-width: 480px) and (max-width: 767px) {
-            @include size(460px, 345px);
-
-        }*/
+        }
     }
     &__item-title {
         text-transform: uppercase;
         color: $black;
         text-align: center;
-        margin-bottom: 94px;
+       
         font-size: 1.125rem;
-        @media (min-width: 768px) and (max-width: 1200px) {
-            margin-bottom: 40px;
-        }
+        
         @media (min-width: 320px) and (max-width: 767px) {
             color: $white;
             transform: translateY(-50px);
             position: relative;
             z-index: 6;
-            margin-bottom: 0;
+        
         }
     }
 }
 
 .col-gallery {
     display: flex;
-    @media (min-width: 320px) and (max-width: 1199px) {
+     margin-bottom: 94px;
+    @media (min-width: 768px) and (max-width: 1200px) {
+            margin-bottom: 40px;
+        }
+    @media (min-width: 320px) and (max-width: 767px) {
+            margin-bottom: 0;
+    }
+    @media (min-width: 320px) and (max-width: 1200px) {
             justify-content: center;
             
     }
