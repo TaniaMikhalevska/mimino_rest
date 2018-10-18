@@ -47,23 +47,17 @@ function addItem() {
     for (var i = 0; i < length; i++) {
     var item = document.createElement('div');
     item.className = 'col-12 col-sm-6 col-xl-4 col-gallery';
-    item.innerHTML = `  <a data-fancybox="gallery" href=                               ${data[i].img} class="section__link">
+    item.innerHTML = `  <a data-fancybox="gallery" href=${data[i].img} class="section__link">
                         <div class="section__item"><img src=${data[i].img} alt="" class="section__img"></div>
                         <p class="section__item-title">
                         ${data[i].title}
                         </p>
                     </a>`;
-    
-    editableRow.appendChild(item);
-        if (data.length<4) {
-            newBtn.addEventListener('click', hideBtn)
+
             
         }
         
-        }
-
-}
-
+     }
 
 
 (function($){
@@ -75,8 +69,6 @@ function addItem() {
       $(this).load(file);
     });
  
-        
-        
         
 		//slider
         $('.hotel__slider').slick({
@@ -99,6 +91,13 @@ function addItem() {
         $("html, body").animate({scrollTop:0}, 900)
     }); 
       
+        // link ancor
+        	$('.nav a').click(function(){
+		    $('html, body').animate({
+		        scrollTop: $($.attr(this, 'href')).offset().top - 0
+		    }, 5000);
+		    return false;
+		});
         
         //burger menu
           $(document).on('click', '.nav__link--min', function(){
@@ -110,6 +109,8 @@ function addItem() {
 })(jQuery);
 
  
+
+
 function initMap() {
            var center = {lat: 49.599323, lng: 34.525987},
                map  = new google.maps.Map(document.getElementById('map'), {
