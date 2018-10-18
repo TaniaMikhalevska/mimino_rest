@@ -79,7 +79,7 @@ function addItem() {
         //btn-top
         var $btnTop =$(".btn--top");
         $(window).on("scroll", function() {
-            if ($(window).scrollTop() >= 20) {
+            if ($(window).scrollTop() >= 200) {
                $btnTop.fadeIn(); 
             }
             else {
@@ -91,14 +91,7 @@ function addItem() {
         $("html, body").animate({scrollTop:0}, 900)
     }); 
       
-        // link ancor
-        	$('.nav a').click(function(){
-		    $('html, body').animate({
-		        scrollTop: $($.attr(this, 'href')).offset().top - 0
-		    }, 5000);
-		    return false;
-		});
-        
+ 
         //burger menu
           $(document).on('click', '.nav__link--min', function(){
             $('.nav__wrapper').toggleClass('nav__wrapper--active')
