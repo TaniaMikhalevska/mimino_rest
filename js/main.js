@@ -91,13 +91,13 @@ function addItem() {
         //gallery
         $('.gal').magnificPopup({
   delegate: 'a', 
-      gallery: {enabled: true}
+      gallery: {enabled: true},
  
 });
           $('.gal1').magnificPopup({
   delegate: 'a', 
   type: 'image',
-      gallery: {enabled: true}
+      gallery: {enabled: true},
   
 });
         //btn-top
