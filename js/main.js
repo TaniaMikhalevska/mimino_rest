@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 var data = [
     {img:'images/hotel/new/10.jpg', title: '«СТАНДАРТ»'},
     {img:'images/hotel/new/11.jpg', title: '«СТАНДАРТ»'},
@@ -18,42 +17,35 @@ var data = [
     editableRow =document.getElementById('editableRow');
     
 if (newBtn) {
-    if ( data.length > 3) {
+   
     newBtn.addEventListener('click', addItem);
-    newBtn.addEventListener('click', cutData); 
-   newBtn.addEventListener('click', returnBtn);}
-    if ( data.length <= 3) {
-       newBtn.addEventListener('click', addItem);
-    newBtn.addEventListener('click', cutData); 
-         newBtn.addEventListener('click', hideBtn); 
-    }
-}
+   newBtn.addEventListener('click', cutData); 
+   newBtn.addEventListener('click', returnBtn); 
 
-function hideBtn() {
-   $('#new').remove();
-    /*
-      newBtn.style="display: none";*/ 
-}
+    }
 
 function returnBtn() {
-    editableRow.appendChild(newBtn); 
+    if (data.length>0) {
+    editableRow.appendChild(newBtn);}
+    else {$('#new').remove();}
+    
 }
 function cutData() {
     data.splice(0,3);
 }
 
 function addItem() {
-    var length = data.length < 4 ? data.length : 3;
+  var length = data.length < 4 ? data.length : 3;
     for (var i = 0; i < length; i++) {
     var item = document.createElement('div');
     item.className = 'col-12 col-sm-6 col-xl-4 col-gallery';
-    item.innerHTML = `  <a data-fancybox="gallery" href=${data[i].img} class="section__link">
+    item.innerHTML = `<a href=${data[i].img} class="section__link">
                         <div class="section__item"><img src=${data[i].img} alt="" class="section__img"></div>
                         <p class="section__item-title">
                         ${data[i].title}
                         </p>
                     </a>`;
-
+ editableRow.appendChild(item);
             
         }
         
@@ -96,6 +88,20 @@ function addItem() {
           $(document).on('click', '.nav__link--min', function(){
             $('.nav__wrapper').toggleClass('nav__wrapper--active')
         });
+        //gallery
+        $('.gal').magnificPopup({
+  delegate: 'a', 
+      gallery: {enabled: true}
+ 
+});
+          $('.gal1').magnificPopup({
+  delegate: 'a', 
+  type: 'image',
+      gallery: {enabled: true}
+  
+});
+        //btn-top
+     
        
     })
 
@@ -131,7 +137,7 @@ function initMap() {
 
                };
 google.maps.event.addDomListener(window, 'load', initMap);  
-//modal*/
+//modal
 google.maps.event.addDomListener(window, "resize", resizingMap());
 
 $('#modal').on('show.bs.modal', function() {
