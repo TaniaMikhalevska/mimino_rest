@@ -89,18 +89,19 @@ function addItem() {
             $('.nav__wrapper').toggleClass('nav__wrapper--active')
         });
         //gallery
-        $('.gal').magnificPopup({
+         $('.gal').magnificPopup({
   delegate: 'a', 
-      gallery: {enabled: true},
- 
+  type: 'image',
+      gallery: {enabled: true}
+  
 });
           $('.gal1').magnificPopup({
   delegate: 'a', 
   type: 'image',
-      gallery: {enabled: true},
+      gallery: {enabled: true}
   
 });
-        //btn-top
+        
      
        
     })
